@@ -1,0 +1,10 @@
+<resources>
+    <!-- Material 3 Light Blue Palette -->
+    <color name="light_blue_primary">#0061A4</color>
+    <color name="light_blue_on_primary">#FFFFFF</color>
+    <color name="light_blue_primary_container">#D1E4FF</color>
+    <color name="light_blue_on_primary_container">#001D36</color>
+
+    <!-- Status Bar Color -->
+    <color name="status_bar_light_blue">#D1E4FF</color>
+</resources>

@@ -1,0 +1,8 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.CursorTodoNotes" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Use the light blue color defined in colors.xml for the status bar -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/status_bar_light_blue</item>
+        <!-- Ensure the status bar icons are dark if the background is light -->
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+    </style>
+</resources>
