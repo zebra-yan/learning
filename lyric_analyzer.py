@@ -153,6 +153,21 @@ def analyze_english_rhyme(lines: list[str]) -> dict:
 
 # ── Syllable / stress helpers ────────────────────────────────────────────
 
+FUNCTION_WORDS = {
+    "a", "an", "the", "and", "but", "or", "nor", "for", "yet", "so",
+    "in", "on", "at", "to", "of", "by", "as", "is", "am", "are",
+    "was", "were", "be", "been", "do", "does", "did", "has", "have",
+    "had", "will", "would", "shall", "should", "may", "might", "can",
+    "could", "must", "if", "than", "that", "with", "from", "into",
+    "up", "out", "it", "its", "my", "your", "his", "her", "our",
+    "their", "me", "him", "us", "them", "who", "whom", "which",
+    "this", "these", "those", "not", "no", "i", "we", "you", "he",
+    "she", "they", "i'm", "i've", "i'll", "i'd", "he's", "she's",
+    "it's", "we're", "they're", "you're", "don't", "doesn't",
+    "didn't", "won't", "wouldn't", "can't", "couldn't", "shouldn't",
+}
+
+
 def syllable_count(word: str) -> int:
     phones = pronouncing.phones_for_word(word.lower())
     if phones:
@@ -177,16 +192,49 @@ def _approx_syllables(word: str) -> int:
     return max(count, 1)
 
 
+def stressed_syllable_count(word: str) -> int:
+    """Count primary (1) and secondary (2) stressed syllables in a word."""
+    phones = pronouncing.phones_for_word(word.lower())
+    if phones:
+        return sum(1 for p in phones[0].split() if p[-1] in "12")
+    return max(1, _approx_syllables(word))
+
+
+def is_function_word(word: str) -> bool:
+    return word.lower().strip("',.-!?") in FUNCTION_WORDS
+
+
 def line_syllable_count(line: str) -> int:
     words = re.findall(r"[a-zA-Z']+", line)
     return sum(syllable_count(w) for w in words)
 
 
+def line_stressed_count(line: str) -> int:
+    """Count stressed syllables in a line (line length for songwriting).
+
+    Function words (a, the, is, was, etc.) are treated as unstressed
+    in connected speech, even though CMU dict marks them with stress
+    in citation form.
+    """
+    words = re.findall(r"[a-zA-Z']+", line)
+    count = 0
+    for w in words:
+        if is_function_word(w):
+            continue
+        count += stressed_syllable_count(w)
+    return count
+
+
 def analyze_rhythm(lines: list[str]) -> list[dict]:
     results = []
     for line in lines:
-        sc = line_syllable_count(line)
-        results.append({"line": line.strip(), "syllables": sc})
+        total = line_syllable_count(line)
+        stressed = line_stressed_count(line)
+        results.append({
+            "line": line.strip(),
+            "syllables": total,
+            "stressed": stressed,
+        })
     return results
 
 
@@ -216,7 +264,7 @@ if __name__ == "__main__":
     result = analyze_song_section("Two Story House Verse", verse_lines, "en")
     print(f"Rhyme scheme: {result['rhyme']['scheme']}")
     for r in result["rhythm"]:
-        print(f"  {r['syllables']:2d} syl | {r['line']}")
+        print(f"  {r['stressed']:2d} stressed ({r['syllables']:2d} total) | {r['line']}")
 
     print("\n=== TWO STORY HOUSE — Chorus ===")
     chorus_lines = [
@@ -232,7 +280,7 @@ if __name__ == "__main__":
     result = analyze_song_section("Two Story House Chorus", chorus_lines, "en")
     print(f"Rhyme scheme: {result['rhyme']['scheme']}")
     for r in result["rhythm"]:
-        print(f"  {r['syllables']:2d} syl | {r['line']}")
+        print(f"  {r['stressed']:2d} stressed ({r['syllables']:2d} total) | {r['line']}")
 
     print("\n=== FOOL'S GOLD — Verse ===")
     fg_verse = [
@@ -245,7 +293,7 @@ if __name__ == "__main__":
     result = analyze_song_section("Fool's Gold Verse", fg_verse, "en")
     print(f"Rhyme scheme: {result['rhyme']['scheme']}")
     for r in result["rhythm"]:
-        print(f"  {r['syllables']:2d} syl | {r['line']}")
+        print(f"  {r['stressed']:2d} stressed ({r['syllables']:2d} total) | {r['line']}")
 
     print("\n=== FOOL'S GOLD — Chorus ===")
     fg_chorus = [
@@ -259,7 +307,7 @@ if __name__ == "__main__":
     result = analyze_song_section("Fool's Gold Chorus", fg_chorus, "en")
     print(f"Rhyme scheme: {result['rhyme']['scheme']}")
     for r in result["rhythm"]:
-        print(f"  {r['syllables']:2d} syl | {r['line']}")
+        print(f"  {r['stressed']:2d} stressed ({r['syllables']:2d} total) | {r['line']}")
 
     print("\n=== 再见的另一面 ===")
     cn_lines = [
