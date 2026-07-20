@@ -12,6 +12,7 @@
 - 当前实现策略:
   - 单 Activity + Compose 负责 UI 渲染
   - 列表页 + 详情页，支持新增、编辑、删除、完成状态切换
+  - 支持从周计划 Markdown 文本自动创建 TodoNotes
   - 数据暂存内存，后续逐步接入 Room、Retrofit 和测试
 
 ## 2. 目录结构（核心）

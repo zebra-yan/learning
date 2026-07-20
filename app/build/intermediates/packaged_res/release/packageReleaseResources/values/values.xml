@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <color name="light_blue_on_primary">#FFFFFF</color>
+    <color name="light_blue_on_primary_container">#001D36</color>
+    <color name="light_blue_primary">#0061A4</color>
+    <color name="light_blue_primary_container">#D1E4FF</color>
+    <color name="status_bar_light_blue">#D1E4FF</color>
+    <string name="app_name">Todo Notes</string>
+    <style name="Theme.CursorTodoNotes" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        <item name="android:statusBarColor" ns1:targetApi="l">@color/status_bar_light_blue</item>
+        
+        <item name="android:windowLightStatusBar" ns1:targetApi="m">true</item>
+    </style>
+</resources>

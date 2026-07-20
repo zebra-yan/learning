@@ -16,9 +16,11 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.FileOpen
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material3.Button
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Checkbox
@@ -132,6 +134,14 @@ private sealed interface ScreenState {
  */
 @Composable
 private fun TodoNotesApp() {
+    val context = LocalContext.current
+    val scheduleNotes = remember {
+        runCatching {
+            context.assets.open("weekly_schedule.md").bufferedReader().use { it.readText() }
+        }.mapCatching { parseScheduleMarkdownToTodoNotes(it) }
+            .getOrDefault(emptyList())
+    }
+
     // 内存中的 TodoNote 列表；mutableStateListOf 让列表项增删改都能被 Compose 观察。
     val notes = remember {
         mutableStateListOf(
@@ -147,6 +157,9 @@ private fun TodoNotesApp() {
 
     // 自增 id 生成器，用于新建条目时保证唯一性。
     var nextId by remember { mutableStateOf(2L) }
+
+    // 是否已从日程导入过，避免重复导入造成重复项。
+    var hasImportedSchedule by remember { mutableStateOf(false) }
 
     // 当前页面状态：列表或详情（详情携带待编辑条目 id，null 表示新建）。
     var screenState by remember { mutableStateOf<ScreenState>(ScreenState.List) }
@@ -177,7 +190,22 @@ private fun TodoNotesApp() {
             onOpenDetail = { noteId ->
                 // 打开编辑：进入详情页并携带目标 id。
                 screenState = ScreenState.Detail(noteId = noteId)
-            }
+            },
+            onImportSchedule = {
+                val existingTitles = notes.map { it.title }.toSet()
+                val newNotes = scheduleNotes
+                    .filter { it.title !in existingTitles }
+                    .map { scheduleNote ->
+                        scheduleNote.copy(
+                            id = nextId++,
+                            timestamp = System.currentTimeMillis(),
+                            isDone = false
+                        )
+                    }
+                notes.addAll(newNotes)
+                hasImportedSchedule = true
+            },
+            importEnabled = !hasImportedSchedule
         )
 
         // 详情页：根据 noteId 是否为 null 区分新建与编辑。
@@ -236,11 +264,20 @@ private fun TodoListScreen(
     onAdd: () -> Unit,
     onToggleDone: (Long) -> Unit,
     onDelete: (Long) -> Unit,
-    onOpenDetail: (Long) -> Unit
+    onOpenDetail: (Long) -> Unit,
+    onImportSchedule: () -> Unit,
+    importEnabled: Boolean
 ) {
     Scaffold(
         topBar = {
-            TopAppBar(title = { Text("Todo + Notes") })
+            TopAppBar(
+                title = { Text("Todo + Notes") },
+                actions = {
+                    IconButton(onClick = onImportSchedule, enabled = importEnabled) {
+                        Icon(Icons.Default.FileOpen, contentDescription = "Import schedule")
+                    }
+                }
+            )
         },
         floatingActionButton = {
             FloatingActionButton(onClick = onAdd) {
