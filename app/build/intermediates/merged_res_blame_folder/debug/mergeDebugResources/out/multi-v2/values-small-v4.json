@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.cursortodonotes.app-mergeDebugResources-56:/values-small-v4/values-small-v4.xml",
+            "outputFile": "com.example.cursortodonotes.app-mergeDebugResources-57:/values-small-v4/values-small-v4.xml",
             "map": [
                 {
                     "source": "C:\\Users\\yan1997\\.gradle\\caches\\9.0.0\\transforms\\dd9e43ba50af8ba0cecb361dc36c6131\\transformed\\material-1.12.0\\res\\values-small-v4\\values-small-v4.xml",

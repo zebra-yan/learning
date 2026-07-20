@@ -1,7 +1,7 @@
 # Cursor Todo Notes
 
 一个用于学习 Cursor 与 Android 开发流程的示例项目。  
-当前目标是从 0 到 1 搭建 Kotlin + Jetpack Compose 应用，并逐步加入数据层、测试和网络层。
+当前已实现从 0 到 1 的 Kotlin + Jetpack Compose 应用：包含 Todo/Note 列表页、详情页，以及内存中的增删改查（CRUD）逻辑。后续将逐步加入数据层、测试和网络层。
 
 ## 1. 技术栈与实现思路
 
@@ -10,9 +10,9 @@
 - UI: Jetpack Compose + Material 3
 - Android: `minSdk 24`, `targetSdk 34`, Java/Kotlin 17
 - 当前实现策略:
-  - 先建立可编译、可运行的最小工程
-  - 使用单 Activity + Compose 进行 UI 渲染
-  - 后续逐步接入 Room、Retrofit 和测试
+  - 单 Activity + Compose 负责 UI 渲染
+  - 列表页 + 详情页，支持新增、编辑、删除、完成状态切换
+  - 数据暂存内存，后续逐步接入 Room、Retrofit 和测试
 
 ## 2. 目录结构（核心）
 
@@ -95,11 +95,14 @@
   - 注册 `MainActivity` 并设置 `MAIN/LAUNCHER` 作为启动入口。
 
 #### `app/src/main/java/com/example/cursortodonotes/MainActivity.kt`
-- **作用**: 应用入口 Activity，承载 Compose UI。
+- **作用**: 应用入口 Activity，承载 Compose UI 与全部业务状态。
 - **实现方式**:
   - `ComponentActivity` + `setContent {}`。
-  - 外层 `MaterialTheme` + `Surface`。
-  - `Box` 居中展示 `Text("Hello Cursor")`，用于验证工程可运行。
+  - 自定义 `AppTheme` 提供深浅色方案。
+  - `TodoNotesApp` 作为根状态中心，持有 `notes`、`nextId`、`screenState`。
+  - 根据 `ScreenState` 分发列表页 `TodoListScreen` 或详情页 `TodoDetailScreen`。
+  - 在内存中实现增删改查：新增用 `nextId` 生成条目；编辑通过 `indexOfFirst` + `copy` 更新；删除用 `removeAll`；完成状态切换也是 Update 的一种。
+  - 代码中包含对 `@Composable`、`remember`、`State`、`TodoNote` 模型和 CRUD 逻辑的详细注释。
 
 #### `app/src/main/res/values/strings.xml`
 - **作用**: 字符串资源管理。
@@ -123,7 +126,7 @@
 1. 用 Android Studio 打开项目根目录。  
 2. 等待 Gradle Sync 完成。  
 3. 选择 `app` 模块，运行 `debug` 到模拟器或真机。  
-4. 首次运行期望结果：屏幕中间显示 `Hello Cursor`。
+4. 首次运行期望结果：应用展示 "Todo + Notes" 列表页，默认有一条欢迎条目；可点击 + 新增、点击条目编辑、勾选切换完成状态、点击 Delete 删除。
 
 ## 5. 测试说明
 
@@ -139,7 +142,8 @@
 
 ## 6. 后续迭代路线（与学习计划对齐）
 
-1. 第 2 阶段：实现 Todo/Note 列表与详情页面，先用内存数据跑通增删改查。  
+1. ✅ 第 2 阶段：已实现 Todo/Note 列表与详情页面，用内存数据跑通增删改查。 
+                当你切换系统深色/浅色主题时，Android 会触发 uiMode 配置变化，默认行为是销毁并重建 MainActivity。重建后 Compose 树重新创建，remember { mutableStateListOf(...) } 被重新初始化，新建的便签因此消失。旋转屏幕、改变字号/语言等配置变化也会触发同样问题。
 2. 第 3 阶段：接入 Room，保证重启后数据保留，并补 3-5 个单测。  
 3. 第 4 阶段：预留 Retrofit 接口 + Repository 解耦 + README 持续完善。  
 

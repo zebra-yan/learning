@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.cursortodonotes.app-mergeDebugResources-56:/values-fr/values-fr.xml",
+            "outputFile": "com.example.cursortodonotes.app-mergeDebugResources-57:/values-fr/values-fr.xml",
             "map": [
                 {
                     "source": "C:\\Users\\yan1997\\.gradle\\caches\\9.0.0\\transforms\\0d23862e986a10fc972573717b996227\\transformed\\jetified-ui-release\\res\\values-fr\\values-fr.xml",

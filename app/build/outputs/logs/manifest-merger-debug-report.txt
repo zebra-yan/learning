@@ -1,13 +1,14 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\repos\learning\app\src\main\AndroidManifest.xml:2:1-19:12
-INJECTED from D:\repos\learning\app\src\main\AndroidManifest.xml:2:1-19:12
-INJECTED from D:\repos\learning\app\src\main\AndroidManifest.xml:2:1-19:12
-INJECTED from D:\repos\learning\app\src\main\AndroidManifest.xml:2:1-19:12
+ADDED from D:\repos\learning\app\src\main\AndroidManifest.xml:2:1-20:12
+INJECTED from D:\repos\learning\app\src\main\AndroidManifest.xml:2:1-20:12
+INJECTED from D:\repos\learning\app\src\main\AndroidManifest.xml:2:1-20:12
+INJECTED from D:\repos\learning\app\src\main\AndroidManifest.xml:2:1-20:12
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\yan1997\.gradle\caches\9.0.0\transforms\dd9e43ba50af8ba0cecb361dc36c6131\transformed\material-1.12.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.compose.material3:material3-android:1.2.1] C:\Users\yan1997\.gradle\caches\9.0.0\transforms\dc41953b09f15ffda4f3cda0c39f732d\transformed\jetified-material3-release\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.compose.material:material-android:1.6.3] C:\Users\yan1997\.gradle\caches\9.0.0\transforms\b6dcc3231d6405a27a32db052c2c647b\transformed\jetified-material-release\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.material:material-icons-core-android:1.6.3] C:\Users\yan1997\.gradle\caches\9.0.0\transforms\ad6fbcbc7ecb9e261b670aacfacf4edb\transformed\jetified-material-icons-core-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-icons-extended-android:1.6.3] C:\Users\yan1997\.gradle\caches\9.0.0\transforms\99a83f061bd4248e59776e7a27873b08\transformed\jetified-material-icons-extended-release\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.material:material-ripple-android:1.6.3] C:\Users\yan1997\.gradle\caches\9.0.0\transforms\c7d518a83d420bfc9b99e5371c40e3f1\transformed\jetified-material-ripple-release\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.foundation:foundation-android:1.6.3] C:\Users\yan1997\.gradle\caches\9.0.0\transforms\fb534029c4a9bf0f41e80dc55e7d05b7\transformed\jetified-foundation-release\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.animation:animation-android:1.6.3] C:\Users\yan1997\.gradle\caches\9.0.0\transforms\f0741662a0a17c02baeef3a962e3384c\transformed\jetified-animation-release\AndroidManifest.xml:2:1-7:12
@@ -83,8 +84,8 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\yan1997\.gradle\
 	xmlns:android
 		ADDED from D:\repos\learning\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from D:\repos\learning\app\src\main\AndroidManifest.xml:5:5-17:19
-INJECTED from D:\repos\learning\app\src\main\AndroidManifest.xml:5:5-17:19
+ADDED from D:\repos\learning\app\src\main\AndroidManifest.xml:5:5-18:19
+INJECTED from D:\repos\learning\app\src\main\AndroidManifest.xml:5:5-18:19
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\yan1997\.gradle\caches\9.0.0\transforms\dd9e43ba50af8ba0cecb361dc36c6131\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\yan1997\.gradle\caches\9.0.0\transforms\dd9e43ba50af8ba0cecb361dc36c6131\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.compose.ui:ui-tooling-android:1.6.3] C:\Users\yan1997\.gradle\caches\9.0.0\transforms\902c04fac8b20e743a8fe094f6fb9119\transformed\jetified-ui-tooling-release\AndroidManifest.xml:22:5-26:19
@@ -116,21 +117,23 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\yan1997\.gradle\ca
 	android:theme
 		ADDED from D:\repos\learning\app\src\main\AndroidManifest.xml:8:9-53
 activity#com.example.cursortodonotes.MainActivity
-ADDED from D:\repos\learning\app\src\main\AndroidManifest.xml:9:9-16:20
+ADDED from D:\repos\learning\app\src\main\AndroidManifest.xml:9:9-17:20
 	android:exported
 		ADDED from D:\repos\learning\app\src\main\AndroidManifest.xml:11:13-36
+	android:configChanges
+		ADDED from D:\repos\learning\app\src\main\AndroidManifest.xml:12:13-66
 	android:name
 		ADDED from D:\repos\learning\app\src\main\AndroidManifest.xml:10:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\repos\learning\app\src\main\AndroidManifest.xml:12:13-15:29
+ADDED from D:\repos\learning\app\src\main\AndroidManifest.xml:13:13-16:29
 action#android.intent.action.MAIN
-ADDED from D:\repos\learning\app\src\main\AndroidManifest.xml:13:17-69
+ADDED from D:\repos\learning\app\src\main\AndroidManifest.xml:14:17-69
 	android:name
-		ADDED from D:\repos\learning\app\src\main\AndroidManifest.xml:13:25-66
+		ADDED from D:\repos\learning\app\src\main\AndroidManifest.xml:14:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\repos\learning\app\src\main\AndroidManifest.xml:14:17-77
+ADDED from D:\repos\learning\app\src\main\AndroidManifest.xml:15:17-77
 	android:name
-		ADDED from D:\repos\learning\app\src\main\AndroidManifest.xml:14:27-74
+		ADDED from D:\repos\learning\app\src\main\AndroidManifest.xml:15:27-74
 uses-sdk
 INJECTED from D:\repos\learning\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\repos\learning\app\src\main\AndroidManifest.xml
@@ -143,6 +146,8 @@ MERGED from [androidx.compose.material:material-android:1.6.3] C:\Users\yan1997\
 MERGED from [androidx.compose.material:material-android:1.6.3] C:\Users\yan1997\.gradle\caches\9.0.0\transforms\b6dcc3231d6405a27a32db052c2c647b\transformed\jetified-material-release\AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.material:material-icons-core-android:1.6.3] C:\Users\yan1997\.gradle\caches\9.0.0\transforms\ad6fbcbc7ecb9e261b670aacfacf4edb\transformed\jetified-material-icons-core-release\AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.material:material-icons-core-android:1.6.3] C:\Users\yan1997\.gradle\caches\9.0.0\transforms\ad6fbcbc7ecb9e261b670aacfacf4edb\transformed\jetified-material-icons-core-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-extended-android:1.6.3] C:\Users\yan1997\.gradle\caches\9.0.0\transforms\99a83f061bd4248e59776e7a27873b08\transformed\jetified-material-icons-extended-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-extended-android:1.6.3] C:\Users\yan1997\.gradle\caches\9.0.0\transforms\99a83f061bd4248e59776e7a27873b08\transformed\jetified-material-icons-extended-release\AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.material:material-ripple-android:1.6.3] C:\Users\yan1997\.gradle\caches\9.0.0\transforms\c7d518a83d420bfc9b99e5371c40e3f1\transformed\jetified-material-ripple-release\AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.material:material-ripple-android:1.6.3] C:\Users\yan1997\.gradle\caches\9.0.0\transforms\c7d518a83d420bfc9b99e5371c40e3f1\transformed\jetified-material-ripple-release\AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.foundation:foundation-android:1.6.3] C:\Users\yan1997\.gradle\caches\9.0.0\transforms\fb534029c4a9bf0f41e80dc55e7d05b7\transformed\jetified-foundation-release\AndroidManifest.xml:5:5-44
