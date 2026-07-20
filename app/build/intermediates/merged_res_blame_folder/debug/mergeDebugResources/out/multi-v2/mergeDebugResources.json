@@ -2908,23 +2908,6 @@
                     }
                 },
                 {
-                    "source": "D:\\repos\\learning\\app\\src\\main\\res\\values\\colors.xml",
-                    "from": {
-                        "startLines": "3,5,2,4,8",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "112,231,59,168,328",
-                        "endColumns": "55,65,52,62,55",
-                        "endOffsets": "163,292,107,226,379"
-                    },
-                    "to": {
-                        "startLines": "620,621,622,623,877",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "33332,33388,33454,33507,52672",
-                        "endColumns": "55,65,52,62,55",
-                        "endOffsets": "33383,33449,33502,33565,52723"
-                    }
-                },
-                {
                     "source": "C:\\Users\\yan1997\\.gradle\\caches\\9.0.0\\transforms\\f4aab510865bd41e5eb1e2d1053a1f31\\transformed\\jetified-viewpager2-1.0.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2",
@@ -2999,20 +2982,20 @@
                     }
                 },
                 {
-                    "source": "D:\\repos\\learning\\app\\src\\main\\res\\values\\strings.xml",
+                    "source": "D:\\repos\\learning.worktrees\\agents-auto-create-todonotes-from-md\\app\\src\\main\\res\\values\\colors.xml",
                     "from": {
-                        "startLines": "1",
-                        "startColumns": "4",
-                        "startOffsets": "16",
-                        "endColumns": "47",
-                        "endOffsets": "59"
+                        "startLines": "3,5,2,4,8",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "115,236,61,172,336",
+                        "endColumns": "55,65,52,62,55",
+                        "endOffsets": "166,297,109,230,387"
                     },
                     "to": {
-                        "startLines": "1909",
-                        "startColumns": "4",
-                        "startOffsets": "128023",
-                        "endColumns": "47",
-                        "endOffsets": "128066"
+                        "startLines": "620,621,622,623,877",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "33332,33388,33454,33507,52672",
+                        "endColumns": "55,65,52,62,55",
+                        "endOffsets": "33383,33449,33502,33565,52723"
                     }
                 },
                 {
@@ -3030,6 +3013,25 @@
                         "startOffsets": "127940",
                         "endColumns": "82",
                         "endOffsets": "128018"
+                    }
+                },
+                {
+                    "source": "D:\\repos\\learning.worktrees\\agents-auto-create-todonotes-from-md\\app\\src\\main\\res\\values\\themes.xml",
+                    "from": {
+                        "startLines": "1",
+                        "startColumns": "4",
+                        "startOffsets": "64",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "510"
+                    },
+                    "to": {
+                        "startLines": "6390",
+                        "startColumns": "4",
+                        "startOffsets": "449102",
+                        "endLines": "6395",
+                        "endColumns": "12",
+                        "endOffsets": "449393"
                     }
                 },
                 {
@@ -3052,22 +3054,20 @@
                     }
                 },
                 {
-                    "source": "D:\\repos\\learning\\app\\src\\main\\res\\values\\themes.xml",
+                    "source": "D:\\repos\\learning.worktrees\\agents-auto-create-todonotes-from-md\\app\\src\\main\\res\\values\\strings.xml",
                     "from": {
                         "startLines": "1",
                         "startColumns": "4",
-                        "startOffsets": "63",
-                        "endLines": "6",
-                        "endColumns": "12",
-                        "endOffsets": "504"
+                        "startOffsets": "17",
+                        "endColumns": "47",
+                        "endOffsets": "60"
                     },
                     "to": {
-                        "startLines": "6390",
+                        "startLines": "1909",
                         "startColumns": "4",
-                        "startOffsets": "449102",
-                        "endLines": "6395",
-                        "endColumns": "12",
-                        "endOffsets": "449393"
+                        "startOffsets": "128023",
+                        "endColumns": "47",
+                        "endOffsets": "128066"
                     }
                 },
                 {

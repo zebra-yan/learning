@@ -53,9 +53,9 @@ com.example.cursortodonotes.app-jetified-animation-release-51 C:\Users\yan1997\.
 com.example.cursortodonotes.app-jetified-viewpager2-1.0.0-52 C:\Users\yan1997\.gradle\caches\9.0.0\transforms\f4aab510865bd41e5eb1e2d1053a1f31\transformed\jetified-viewpager2-1.0.0\res
 com.example.cursortodonotes.app-jetified-activity-ktx-1.8.2-53 C:\Users\yan1997\.gradle\caches\9.0.0\transforms\f77916320783e4197fdfb79400dd26b7\transformed\jetified-activity-ktx-1.8.2\res
 com.example.cursortodonotes.app-jetified-foundation-release-54 C:\Users\yan1997\.gradle\caches\9.0.0\transforms\fb534029c4a9bf0f41e80dc55e7d05b7\transformed\jetified-foundation-release\res
-com.example.cursortodonotes.app-resValues-55 D:\repos\learning\app\build\generated\res\resValues\debug
-com.example.cursortodonotes.app-packageDebugResources-56 D:\repos\learning\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.example.cursortodonotes.app-packageDebugResources-57 D:\repos\learning\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.example.cursortodonotes.app-debug-58 D:\repos\learning\app\build\intermediates\merged_res\debug\mergeDebugResources
-com.example.cursortodonotes.app-debug-59 D:\repos\learning\app\src\debug\res
-com.example.cursortodonotes.app-main-60 D:\repos\learning\app\src\main\res
+com.example.cursortodonotes.app-resValues-55 D:\repos\learning.worktrees\agents-auto-create-todonotes-from-md\app\build\generated\res\resValues\debug
+com.example.cursortodonotes.app-packageDebugResources-56 D:\repos\learning.worktrees\agents-auto-create-todonotes-from-md\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.cursortodonotes.app-packageDebugResources-57 D:\repos\learning.worktrees\agents-auto-create-todonotes-from-md\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.cursortodonotes.app-debug-58 D:\repos\learning.worktrees\agents-auto-create-todonotes-from-md\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.example.cursortodonotes.app-debug-59 D:\repos\learning.worktrees\agents-auto-create-todonotes-from-md\app\src\debug\res
+com.example.cursortodonotes.app-main-60 D:\repos\learning.worktrees\agents-auto-create-todonotes-from-md\app\src\main\res
